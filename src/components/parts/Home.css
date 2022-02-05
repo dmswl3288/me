@@ -1,0 +1,7 @@
+.updown-img {
+    animation: 2s ease-in-out 0s infinite alternate none running updown;
+}
+@keyframes updown {
+    0% {transform: translateY(-15px);} 
+	100% {transform: translateY(+15px);} 
+}
