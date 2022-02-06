@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import PropTypes from 'prop-types'
+import smoothscroll from 'smoothscroll-polyfill'
 import { styled, makeStyles } from '@mui/styles'
 import {
     Container,
@@ -72,6 +73,8 @@ const Header = ({props}) => {
     const [anchorElUser, setAnchorElUser] = useState(null)
     const [scrollPosition, setScrollPosition] = useState(0)
 
+    smoothscroll.polyfill()
+    
     useEffect(()=>{
         window.addEventListener('scroll', updateScroll)
     })
