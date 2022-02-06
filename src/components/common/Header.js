@@ -80,7 +80,9 @@ const Header = ({props}) => {
     })
 
     const onHandleScrollView = (id) => {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+        }, 300)
     }
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget)
@@ -155,10 +157,7 @@ const Header = ({props}) => {
                         {['top'].map((anchor) => (
                             <div key={anchor}>
                                 <IconButton onClick={toggleDrawer(anchor, true)}>
-                                    <MenuIcon 
-                                        sx={{ color: scrollPosition < 700 ? '#fff': '#000' }} 
-                                        onClick={toggleDrawer(anchor, true)}
-                                    />
+                                    <MenuIcon sx={{ color: scrollPosition < 700 ? '#fff': '#000' }} />
                                 </IconButton>
                                 <Drawer
                                     anchor={anchor}
