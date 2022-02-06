@@ -72,10 +72,10 @@ const Header = ({props}) => {
     const [anchorElNav, setAnchorElNav] = useState(null)
     const [anchorElUser, setAnchorElUser] = useState(null)
     const [scrollPosition, setScrollPosition] = useState(0)
-
-    smoothscroll.polyfill()
     
-    useEffect(()=>{
+    smoothscroll.polyfill()
+
+    useEffect(() => {
         window.addEventListener('scroll', updateScroll)
     })
 
@@ -98,10 +98,43 @@ const Header = ({props}) => {
         setScrollPosition(window.scrollY || document.documentElement.scrollTop)
     }
 
+    const [state, setState] = useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    })
+
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+          return
+        }
+    
+        setState({ ...state, [anchor]: open });
+    }
+
+    const list = (anchor) => (
+        <Box
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          role="presentation"
+          onClick={toggleDrawer(anchor, false)}
+          onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                {pages.map((text, index) => (
+                <ListItem button key={text} onClick={() => {onHandleScrollView(text.toLowerCase())}}>
+                    <ListItemText primary={text} />
+                </ListItem>
+                ))}
+            </List>
+            <Divider />
+        </Box>
+    );
+
     return (
         <ElevationScroll {...props}>
             <HeaderBar sx={{ 
-                background: scrollPosition < 900 ? 'transparent !important': '#fff',
+                background: scrollPosition < 700 ? 'transparent !important': '#fff',
             }}>
                 <Container
                     style={{
@@ -112,57 +145,36 @@ const Header = ({props}) => {
                     }}
                 >
                 <IconButton onClick={() => {window.location.href='/me/'}}
-                    sx={{ color: scrollPosition < 900 ? '#fff': '#000' }}
+                    sx={{ color: scrollPosition < 700 ? '#fff': '#000' }}
                 >
                     EUNJI HAN
                 </IconButton>
                 <div>
                     {/* mobile */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        sx={{ color: scrollPosition < 900 ? '#fff': '#000' }}
-                        >
-                        <MenuIcon />
-                        </IconButton>
-                        <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorElNav}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}
-                        >
-                        {pages.map((page) => (
-                            <MenuItem key={page}>
-                            <Button onClick={() => {onHandleScrollView(page.toLowerCase())}}
-                                sx={{ color: '#000' }}
-                            >
-                                {page}
-                            </Button>
-                            </MenuItem>
+                        {['top'].map((anchor) => (
+                            <div key={anchor}>
+                                <IconButton onClick={toggleDrawer(anchor, true)}>
+                                    <MenuIcon 
+                                        sx={{ color: scrollPosition < 700 ? '#fff': '#000' }} 
+                                        onClick={toggleDrawer(anchor, true)}
+                                    />
+                                </IconButton>
+                                <Drawer
+                                    anchor={anchor}
+                                    open={state[anchor]}
+                                    onClose={toggleDrawer(anchor, false)}
+                                >
+                                    {list(anchor)}
+                                </Drawer>
+                            </div>
                         ))}
-                        </Menu>
                     </Box>
 
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                         {pages.map((page) => (
                             <Button onClick={() => {onHandleScrollView(page.toLowerCase())}}
-                                sx={{ color: scrollPosition < 900 ? '#fff': '#000' }}
+                                sx={{ color: scrollPosition < 700 ? '#fff': '#000' }}
                             >
                                 {page}
                             </Button>
