@@ -12,6 +12,7 @@ import {
 } from '@mui/material'
 import './Contact.css'
 import { Icon } from '@iconify/react'
+import Fade from 'react-reveal/Fade'
 
 const PageContainer = styled(Container)({
     // backgroundColor: '#f5f7f9 !important',
@@ -34,7 +35,7 @@ const Contact = () => {
                 src='assets/contact/5661.png'
                 width={250}
             />
-            <Typography variant='h5' sx={{ fontWeight: 'bold', mb: 4 }}>CONTACT</Typography>
+            <Fade bottom><Typography variant='h5' sx={{ fontWeight: 'bold', mb: 4 }}>CONTACT</Typography></Fade>
             <CardBox sx={{ p: 4 }}>
                 <Typography sx={{ textAlign: 'left', display: 'flex', alignItems: 'center' }}>
                     <Icon icon="bx:bxs-phone" style={{ marginRight: '10px' }}/>+82 10 2881 9649
