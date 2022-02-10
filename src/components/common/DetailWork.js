@@ -9,7 +9,7 @@ import {
     Typography,
     IconButton,
     Grid,
-    Link,
+    Box,
     Dialog,
     DialogTitle,
     MobileStepper,
@@ -67,10 +67,10 @@ const DetailWork = ({
             >
                 {work.subImgSrc.map((src, i) => {
                     return (
-                        <div key={i}>
+                        <div key={i} style={{ height: '100%', background: '#f5f7fd' }}>
                             <img 
                                 src={src} 
-                                style={{ width: '100%' }} 
+                                style={{ width: '100%', objectFit: 'cover' }} 
                             />
                         </div>
                     )
@@ -82,37 +82,37 @@ const DetailWork = ({
                 activeStep={activeStep}
                 sx={{ display: maxSteps > 1 ? 'flex' : 'none', justifyContent: 'center' }}
             />
-            <div style={{ display: 'flex', padding: '0 16px 10px 16px', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', padding: maxSteps > 1 ? '0px 16px 10px 16px' : '7px 16px 10px 16px', justifyContent: 'space-between' }}>
                 <div>
-                    <FavoriteBorderIcon sx={{ width: 30, height: 30, mr: 2}} />
-                    <ModeCommentOutlinedIcon sx={{ width: 30, height: 30, mr: 2 }} />
-                    <SendOutlinedIcon sx={{ width: 30, height: 30 }} />
+                    <FavoriteBorderIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, mr: 2}} />
+                    <ModeCommentOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, mr: 2 }} />
+                    <SendOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30} }} />
                 </div>
                 <div>
-                    <BookmarkBorderOutlinedIcon sx={{ width: 30, height: 30 }} />
+                    <BookmarkBorderOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30} }} />
                 </div>
             </div>
             <div style={{ padding: '0 16px 10px 16px' }}>
-                <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+                <Typography sx={{ display: 'flex', alignItems: 'center', fontSize: {xs: '0.8rem', md: '1rem'} }}>
                     <div style={{ display: 'flex' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 5, border: '3px solid #ffffff', zIndex: '2' }}>
+                        <Box sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 0.6, border: '3px solid #ffffff', zIndex: '2' }}>
                             <img 
                                 src='assets/profile/profile_0.jpg'
                                 style={{ width: '100%', height: '100%' }}
                             />
-                        </div>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 5, border: '3px solid #ffffff', marginLeft: '-18px', zIndex: '1' }}>
+                        </Box>
+                        <Box sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 0.6, border: '3px solid #ffffff', marginLeft: '-18px', zIndex: '1' }}>
                             <img 
                                 src='assets/profile/profile_1.jpg'
                                 style={{ width: '100%', height: '100%' }}
                             />
-                        </div>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 5, border: '3px solid #ffffff', marginLeft: '-18px', zIndex: '0' }}>
+                        </Box>
+                        <Box sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 0.6, border: '3px solid #ffffff', marginLeft: '-18px', zIndex: '0' }}>
                             <img 
                                 src='assets/profile/profile_2.jpg'
                                 style={{ width: '100%', height: '100%' }}
                             />
-                        </div>
+                        </Box>
                     </div>
                     <div>
                         <strong>me</strong>님&nbsp;<strong>외 여러 명</strong>이 좋아합니다

@@ -14,6 +14,7 @@ import {
 } from '@mui/material'
 import Fade from 'react-reveal/Fade'
 import DetailWork from '../common/DetailWork'
+import CollectionsIcon from '@mui/icons-material/Collections'
 
 const PageLayout = styled('div')({
     minWidth: '100%', 
@@ -65,6 +66,9 @@ const Work = () => {
                                                 src={work.mainImgSrc}
                                                 width={300}
                                             />
+                                            <div style={{ position: 'absolute', top: 0, right: '-10px' }}>
+                                                <CollectionsIcon sx={{ background: '#fff', color: '#5e5c7f', borderRadius: '3px' }} />
+                                            </div>
                                         </Button>
                                         <div style={{ textAlign: 'left', marginTop: '25px' }}>
                                             <Typography sx={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{work.title}</Typography>
@@ -166,7 +170,7 @@ const workData = [
     },
     {
         mainImgSrc: 'assets/work/lms_screen.png',
-        subImgSrc: ['assets/work/lms_screen.png'],
+        subImgSrc: ['assets/work/lms_screen.png', 'assets/work/lms_0.png', 'assets/work/lms_1.png', 'assets/work/lms_2.png', 'assets/work/lms_3.png', 'assets/work/lms_4.png'],
         title: 'LMS',
         isAlone: false,
         description: '교육앱 전용 LMS 프론트엔드(front-end) 개발\n',
@@ -174,7 +178,7 @@ const workData = [
     },
     {
         mainImgSrc: 'assets/work/positivelab.png',
-        subImgSrc: ['assets/work/positivelab.png'],
+        subImgSrc: ['assets/work/positivelab.png', 'assets/work/positivelab_about.png', 'assets/work/positivelab_product.png', 'assets/work/positivelab_news.png', 'assets/work/positivelab_brochure.png'],
         title: 'POSITIVE LAB',
         isAlone: false,
         description: 'POSITIVE LAB 프론트엔드(front-end) 개발\n',
