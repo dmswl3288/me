@@ -14,12 +14,12 @@ import {
     DialogTitle,
     MobileStepper,
 } from '@mui/material'
-import CloseIcon from '@mui/icons-material/Close'
 import SwipeableViews from 'react-swipeable-views'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined'
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined'
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined'
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 
 const DetailWork = ({
     handleClose,
@@ -51,13 +51,22 @@ const DetailWork = ({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    fontSize: '1.2rem',
+                    fontSize: '1rem',
                     fontWeight: 'bold',
+                    padding: '16px 10px 16px 20px',
                 }}  
             >
-                {work.title}
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ width: {xs: 30, md: 35}, height: {xs: 30, md: 35}, borderRadius: '50%', background: 'black', overflow: 'hidden', marginRight: 1 }}>
+                        <img 
+                            src='assets/profile/5141092.jpg'
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    </Box>
+                    {work.title}
+                </div>
                 <IconButton onClick={handleClose}>
-                    <CloseIcon/>
+                    <MoreHorizIcon />
                 </IconButton>
             </DialogTitle>
             <SwipeableViews 
@@ -85,7 +94,7 @@ const DetailWork = ({
             <div style={{ display: 'flex', padding: maxSteps > 1 ? '0px 16px 10px 16px' : '7px 16px 10px 16px', justifyContent: 'space-between' }}>
                 <div>
                     <FavoriteBorderIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, mr: 2}} />
-                    <ModeCommentOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, mr: 2 }} />
+                    <ModeCommentOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30}, mr: 2}} />
                     <SendOutlinedIcon sx={{ width: {xs: 25, md: 30}, height: {xs: 25, md: 30} }} />
                 </div>
                 <div>
