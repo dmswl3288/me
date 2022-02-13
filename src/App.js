@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router'
 import './App.css'
 import { styled } from '@mui/styles'
 import { Container } from '@mui/material'
-import Header from 'components/common/Header'
-import Home from 'components/parts/Home'
-import About from 'components/parts/About'
-import Activity from 'components/parts/Activity'
-import Work from 'components/parts/Work'
-import Contact from 'components/parts/Contact'
+import Header from 'src/components/common/Header'
+import Home from 'src/components/parts/Home'
+import About from 'src/components/parts/About'
+import Activity from 'src/components/parts/Activity'
+import Work from 'src/components/parts/Work'
+import Contact from 'src/components/parts/Contact'
 
 const AppContainer = styled('div')({
   display: 'flex',

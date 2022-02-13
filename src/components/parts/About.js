@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import SchoolIcon from '@mui/icons-material/School'
 import ComputerIcon from '@mui/icons-material/Computer'
-import SkillsProgressBar from 'components/common/SkillsProgressBar'
+import SkillsProgressBar from 'src/components/common/SkillsProgressBar'
 import Fade from 'react-reveal/Fade'
 
 const PageContainer = styled(Container)({

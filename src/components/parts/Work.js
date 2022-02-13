@@ -13,7 +13,7 @@ import {
     Dialog,
 } from '@mui/material'
 import Fade from 'react-reveal/Fade'
-import DetailWork from 'components/common/DetailWork'
+import DetailWork from 'src/components/common/DetailWork'
 import CollectionsIcon from '@mui/icons-material/Collections'
 
 const PageLayout = styled('div')({
