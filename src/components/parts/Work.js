@@ -13,7 +13,7 @@ import {
     Dialog,
 } from '@mui/material'
 import Fade from 'react-reveal/Fade'
-import DetailWork from '../common/DetailWork'
+import DetailWork from 'components/common/DetailWork'
 import CollectionsIcon from '@mui/icons-material/Collections'
 
 const PageLayout = styled('div')({
@@ -86,7 +86,7 @@ const Work = () => {
                                                 {work.link && (
                                                     <div>
                                                         <br/>참고<br/>
-                                                        <a href='https://www.youtube.com/watch?v=sIoBtU8MuN4'>{work.link}</a>
+                                                        <a href={work.link}>{work.link}</a>
                                                     </div>
                                                 )}
                                             </Typography>
@@ -142,7 +142,8 @@ const workData = [
         title: '슈팅스타',
         isAlone: false,
         description: '슈팅스타는 기존 FPS 게임에 증강현실(AR)기술을 더한 모바일 대전게임입니다. 사용자는 다른 기기 필요없이 방을 만들거나 이미 만들어진 방에 들어가 상대와 겨루어 승패를 얻게 됩니다.\n\n이 게임은 졸업작품을 위해 제작된 학과 프로젝트입니다.\n',
-        languageAndTool: ['C# Programming', 'Unity3D', 'Vuforia SDK', 'Photon Cloud']
+        languageAndTool: ['C# Programming', 'Unity3D', 'Vuforia SDK', 'Photon Cloud'],
+        link: 'http://shootingstars.creatorlink.net'
     },
     {
         mainImgSrc: 'assets/work/ReBrain.png',
