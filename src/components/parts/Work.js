@@ -166,7 +166,7 @@ const workData = [
         subImgSrc: ['assets/work/mar_homepage.png'],
         title: 'Web Development',
         isAlone: true,
-        description: '회사 홈페이지 프론트엔드(front-end), 백엔드(back-end) 개발\n\n자주 깜박깜박 잊어버리는 아이디와 비밀번호를 안전한 곳에 보관하여 기억이 나지 않을 때마다 로그인 인증을 통해 나만의 정보를 확인할 수 있습니다.\n',
+        description: '회사 홈페이지 프론트엔드(front-end), 백엔드(back-end) 개발\n',
         languageAndTool: ['JavaScript, PHP', 'AWS', 'MariaDB']
     },
     {
