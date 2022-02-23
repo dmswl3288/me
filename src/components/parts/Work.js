@@ -61,7 +61,7 @@ const Work = () => {
                             <Grid item key={index} xs={12} md={4}>
                                 <Fade bottom>
                                     <CardBox sx={{ p: 2 }}>
-                                        <Button onClick={() => {handleOpen(work)}} style={{maxHeight: '20vh', overflow: 'scroll'}}>
+                                        <Button onClick={() => {handleOpen(work)}} style={{maxHeight: '30vh', overflow: 'scroll'}}>
                                             <img 
                                                 src={work.mainImgSrc}
                                                 width={300}
